@@ -1,0 +1,38 @@
+#include<stdio.h>
+
+int cube(int *x)
+{
+		*x= *x * *x * *x ;
+}
+
+int arm(int a)
+{
+	int x[100],i,s=0,c=0;
+	while(a!=0)
+	{
+			x[i]=a%10;
+			a=a/10;
+			c++;
+	}
+	for (i=0;i<c;++i)
+	{
+			cube(&x[i]);
+	}
+	printf("%d",x[2]);
+	for(i=0;i<c;i++)
+	{
+			s=s+x[i];
+	}
+
+	if (s=a)
+			printf("ARM");	
+	else
+			printf("not ARM");
+}
+
+int main()
+{
+		int a=371;
+		arm(a);
+		return 0;
+}
